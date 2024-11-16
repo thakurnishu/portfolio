@@ -1,0 +1,15 @@
+{{ block "project" . }}
+  <section id="projects" class="py-20 bg-gray">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Projects</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {{ range .ProjectList }}
+              <div class="bg-gray-100 shadow-md rounded-lg p-6">
+                  <h3 class="text-xl font-semibold mb-2">{{ .Title }}</h3>
+                  <p class="text-gray-600">{{ .Description }}</p>
+              </div>
+          {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}

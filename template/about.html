@@ -1,0 +1,11 @@
+{{ block "about" . }}
+  <!-- About Section -->
+  <header class="bg-gray py-[248.5px]">
+    <div class="container mx-auto text-center">
+      <h1 class="text-5xl font-bold text-black">About Me</h1>
+      <div class="text-center max-w-3xl mx-auto">
+          <p class="mt-4 text-lg text-black">{{ .Description }}</p>
+      </div>
+    </div>
+  </header>
+{{ end }}

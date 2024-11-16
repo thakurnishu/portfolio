@@ -1,0 +1,20 @@
+{{ block "connect" . }}
+  <!-- Connect Section -->
+  <section class="py-[180px] bg-gray">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Connect With Me</h2>
+        <div class="flex justify-center gap-5 flex-wrap">
+            {{ range .ConnectionList }}
+            <a href="{{ .Link }}" target="_blank" 
+                class="no-underline text-[#333] overflow-hidden w-[150px] text-center 
+                shadow-[0_4px_6px_rgba(0,0,0,0.1)] transition-transform duration-[0.3s,box-shadow] 
+                delay-[0.3s] rounded-[10px] border-2 border-solid border-[#ddd] py-4
+                transition-[0.1s] duration-[cubic-bezier(0,1.2,0.2,1.5)] hover:scale-150">
+                <i class="fa-brands fa-{{  .Service }}"></i>
+                <span>{{  .Service }}</span>
+            </a>
+            {{ end }}
+        </div>
+    </div>
+  </section>
+{{ end }}
