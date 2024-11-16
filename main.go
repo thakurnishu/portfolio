@@ -9,7 +9,7 @@ import (
 	"github.com/labstack/echo/v4/middleware"
 )
 
-var port = ":8989"
+var port = ":8000"
 
 type Templates struct {
     templates *template.Template
