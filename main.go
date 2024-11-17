@@ -55,6 +55,7 @@ type About struct {
 type Project struct {
     Title string
     Description string
+    Link string
 }
 
 type Connection struct {
@@ -79,6 +80,7 @@ func newPage() Page {
                         Description: `Developed a Kubernetes Controller using KubeBuilder and Client-Go 
                                       to automate and streamline the lifecycle management of services and ingress resources, 
                                       ensuring efficient and seamless deployments`,
+                        Link: "https://github.com/thakurnishu/sik-controller-kubebuilder",
                     },
                     {
                         Title: "Orchestrating Kubernetes Deployments using CICD, GitOps and IAC",
@@ -86,6 +88,7 @@ func newPage() Page {
                                       Designed a robust Jenkins pipeline with a shared library approach integrated 
                                       ArgoCD for seamless Kubernetes deployments, and automated infrastructure 
                                       management with Terraform, ensuring consistency and scalability.`,
+                        Link: "https://github.com/thakurnishu/GoLang-WebServer",
                     },
                     {
                         Title: "Deployed Static Website with Edge Caching and CI/CD on Azure DevOps",
@@ -93,6 +96,17 @@ func newPage() Page {
                                       Azure Storage and Azure CDN for cost-effective hosting and optimized global performance.
                                       Automated deployments using Azure DevOps CI/CD pipelines, ensuring rapid updates and scalability.
                                       Configured Azure CDN to enhance user experience with faster website loading times worldwide.`,
+                        Link: "https://github.com/thakurnishu/StaticWebsite-AzureCloud",
+
+                    },
+                    {
+                        Title: "Deployment of a Scalable and Highly Available 3-Tier Web Application on Azure",
+                        Description: `Implemented a scalable 3-tier web application on Azure using Golang, Kubernetes, Docker, and Terraform.
+                                      Leveraged VMSS, Load Balancer, and Azure Application Gateway for high availability and dynamic scaling.
+                                      Automated deployments with Azure CLI and secured infrastructure with Trivy and SonarQube,
+                                      integrating Azure Database for MySQL for robust data management.`,
+                        Link: "https://github.com/thakurnishu/Tier3WebApplication-AzureCloud",
+
                     },
                 },
             },
