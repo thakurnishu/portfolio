@@ -60,12 +60,17 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Health Status</title>
-        <link rel="stylesheet" href="static/css/healthz.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/htmx.org"></script>
     </head>
-    <body>
-        <div class="container">
-            <div class="animated-person"></div>
-            <div class="title">Application is Running</div>
+    <body class="flex justify-center items-center min-h-screen 
+            text-black m-0 p-0 before:content-[''] before:fixed 
+            before:w-full before:h-full before:z-[-1] before:left-0 before:top-0 bg-gray"
+        >
+        <div class="text-center shadow-[0px_4px_15px_rgba(0,0,0,0.2)] px-10 py-5 rounded-xl"
+            style="background: rgba(255, 255, 255, 0.2);"
+            >
+            <div class="text-[2rem] font-[bold]" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);">The site's alive and kickin'—as fresh as a daisy in springtime! 🌱✨</div>
         </div>
     </body>
 </html>

@@ -26,7 +26,6 @@ FROM scratch
 WORKDIR /app
 # Copy the statically compiled binary from the builder stage
 COPY --from=builder /app/main .
-COPY --from=builder /app/static ./static
 COPY --from=builder /app/template ./template
 
 # Expose the port your app runs on

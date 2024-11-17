@@ -62,13 +62,6 @@ type Connection struct {
     Link string
 }
 
-func newProject(title, description string) Project {
-    return Project{
-        Title: title,
-        Description: description,
-    }
-}
-
 func newConnection(service, link string) Connection {
     return Connection{
         Service: service,
@@ -81,10 +74,26 @@ func newPage() Page {
         Data: Data{
             Projects: Projects{
                 ProjectList: []Project{
-                    newProject("Project1", "Descriptions 1"),
-                    newProject("Project2", "Descriptions 2"),
-                    newProject("Project3", "Descriptions 3 sdfsd sdf fsd dfgd fgdfb fgh fgh fgh fgh fgh fgh fgh 1"),
-                    newProject("Project4", "Descriptions 4 sdf ssdf sdf sdf"),
+                    {
+                        Title: "Integrated K8S Controller for Ingress and Services",
+                        Description: `Developed a Kubernetes Controller using KubeBuilder and Client-Go 
+                                      to automate and streamline the lifecycle management of services and ingress resources, 
+                                      ensuring efficient and seamless deployments`,
+                    },
+                    {
+                        Title: "Orchestrating Kubernetes Deployments using CICD, GitOps and IAC",
+                        Description: `Orchestrated efficient Kubernetes deployments using CI/CD, GitOps, and IaC.
+                                      Designed a robust Jenkins pipeline with a shared library approach integrated 
+                                      ArgoCD for seamless Kubernetes deployments, and automated infrastructure 
+                                      management with Terraform, ensuring consistency and scalability.`,
+                    },
+                    {
+                        Title: "Deployed Static Website with Edge Caching and CI/CD on Azure DevOps",
+                        Description: `Deployed a static website with edge caching and CI/CD on Microsoft Azure, leveraging
+                                      Azure Storage and Azure CDN for cost-effective hosting and optimized global performance.
+                                      Automated deployments using Azure DevOps CI/CD pipelines, ensuring rapid updates and scalability.
+                                      Configured Azure CDN to enhance user experience with faster website loading times worldwide.`,
+                    },
                 },
             },
             Connects: Connects{
@@ -114,8 +123,6 @@ func main() {
     e.Use(middleware.Logger())
 
     e.Renderer = newTemplate()
-
-    e.Static("/static", "static")
 
     page := newPage()
 
