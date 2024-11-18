@@ -1,0 +1,12 @@
+root = "."
+include_ext = [
+    "go",
+    "tpl",
+    "tmpl",
+    "html",
+    "yaml",  # Add YAML files to the watch list
+]
+watch_dir = [
+    "./",         # Root directory
+    "./data.yaml",  # Explicitly watch the data.yaml file
+]

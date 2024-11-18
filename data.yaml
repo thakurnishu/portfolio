@@ -1,0 +1,55 @@
+data:
+  home:
+    name: Nishant Singh
+    description: |
+      A Passionate Developer Specializing in Web and Software Development
+    email:
+      addr: thakurnishant5102003@gmail.com
+      subject: Hi Nishant, I'd like to hire you
+  projects:
+    project_list:
+      - title: Integrated K8S Controller for Ingress and Services
+        link: https://github.com/thakurnishu/sik-controller-kubebuilder
+        description: |
+          Developed a Kubernetes Controller using KubeBuilder and Client-Go 
+          to automate and streamline the lifecycle management of services and ingress resources, 
+          ensuring efficient and seamless deployments
+      - title: Orchestrating Kubernetes Deployments using CICD, GitOps and IAC
+        link: https://github.com/thakurnishu/GoLang-WebServer
+        description: |
+          Orchestrated efficient Kubernetes deployments using CI/CD, GitOps, and IaC.
+          Designed a robust Jenkins pipeline with a shared library approach integrated 
+          ArgoCD for seamless Kubernetes deployments, and automated infrastructure 
+          management with Terraform, ensuring consistency and scalability.
+      - title: Deployed Static Website with Edge Caching and CI/CD on Azure DevOps
+        link: https://github.com/thakurnishu/StaticWebsite-AzureCloud
+        description: |
+          Deployed a static website with edge caching and CI/CD on Microsoft Azure, leveraging
+          Azure Storage and Azure CDN for cost-effective hosting and optimized global performance.
+          Automated deployments using Azure DevOps CI/CD pipelines, ensuring rapid updates and scalability.
+          Configured Azure CDN to enhance user experience with faster website loading times worldwide.
+      - title: Deployment of a Scalable and Highly Available 3-Tier Web Application on Azure
+        link: https://github.com/thakurnishu/Tier3WebApplication-AzureCloud
+        description: |
+          Implemented a scalable 3-tier web application on Azure using Golang, Kubernetes, Docker, and Terraform.
+          Leveraged VMSS, Load Balancer, and Azure Application Gateway for high availability and dynamic scaling.
+          Automated deployments with Azure CLI and secured infrastructure with Trivy and SonarQube,
+          integrating Azure Database for MySQL for robust data management.
+  connects:
+    connection_list:
+      - service: github
+        link: https://github.com/thakurnishu
+      - service: linkedin
+        link: https://www.linkedin.com/in/contact-nishant-singh
+      - service: twitter
+        link: https://x.com/ntsh53
+      - service: medium
+        link: https://medium.com/@thakurnishant5102003
+      - service: hashnode
+        link: https://hashnode.com/@Nishu0510
+  about:
+    description: |
+      An undergraduate from Shri Mata Vaishno Devi University.
+      I have a strong passion for <b>Cloud</b> and <b>DevOps</b> technologies and I am continuously learning new technologies. 
+      I have valuable experience in DevOps, implementing Continuous Integration and Deployment (CI/CD) using Github Action.
+      Currently, I am expanding my knowledge on different technologies
