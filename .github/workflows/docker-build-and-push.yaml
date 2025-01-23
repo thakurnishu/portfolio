@@ -33,11 +33,29 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build Image
-        run: docker build -t ${{ env.IMAGE_NAME }} .
-      - name: Push Image
-        run: |
-          commit_id=$(git rev-parse HEAD)
-          docker tag ${{ env.IMAGE_NAME }}:latest ${{ env.IMAGE_NAME }}:${commit_id}
-          docker push ${{env.IMAGE_NAME }}:${commit_id}
-          docker push ${{env.IMAGE_NAME }}:latest
+      - name: Build and Push Docker Image Commit ID
+        env:
+          REGISTRY: ghcr.io
+          OWNER: ${{ github.actor }}
+          IMAGE_NAME: ${{ github.repository }}
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: .
+          target: final
+          push: true
+          tags: |
+            $REGISTRY/$OWNER/$IMAGE_NAME:$(git rev-parse HEAD)
+      - name: Build and Push Docker Image Latest
+        env:
+          REGISTRY: ghcr.io
+          OWNER: ${{ github.actor }}
+          IMAGE_NAME: ${{ github.repository }}
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: .
+          target: final
+          push: true
+          tags: |
+            $REGISTRY/$OWNER/$IMAGE_NAME:latest
