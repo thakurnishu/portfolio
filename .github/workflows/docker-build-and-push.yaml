@@ -28,6 +28,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: 'main' # Ensure we're checking out the correct branch
+      - name: Set Commit ID
+        id: vars
+        run: echo "COMMIT_ID=$(git rev-parse HEAD)" >> $GITHUB_ENV
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
@@ -42,7 +45,7 @@ jobs:
           target: final
           push: true
           tags: |
-            ghcr.io/${{ github.actor }}/${{ github.repository }}:$(git rev-parse HEAD)
+            ghcr.io/${{ github.actor }}/${{ github.repository }}:${{ env.COMMIT_ID }}
       - name: Build and Push Docker Image Latest
         uses: docker/build-push-action@v2
         with:
