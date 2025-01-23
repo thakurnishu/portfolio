@@ -22,6 +22,7 @@ jobs:
   build-and-push:
     permissions:
       packages: 'write'
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -34,10 +35,6 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and Push Docker Image Commit ID
-        env:
-          REGISTRY: ghcr.io
-          OWNER: ${{ github.actor }}
-          IMAGE_NAME: ${{ github.repository }}
         uses: docker/build-push-action@v2
         with:
           context: .
@@ -45,12 +42,8 @@ jobs:
           target: final
           push: true
           tags: |
-            $REGISTRY/$OWNER/$IMAGE_NAME:$(git rev-parse HEAD)
+            ghcr.io/${{ github.actor }}/${{ github.repository }}:$(git rev-parse HEAD)
       - name: Build and Push Docker Image Latest
-        env:
-          REGISTRY: ghcr.io
-          OWNER: ${{ github.actor }}
-          IMAGE_NAME: ${{ github.repository }}
         uses: docker/build-push-action@v2
         with:
           context: .
@@ -58,4 +51,4 @@ jobs:
           target: final
           push: true
           tags: |
-            $REGISTRY/$OWNER/$IMAGE_NAME:latest
+            ghcr.io/${{ github.actor }}/${{ github.repository }}:latest
