@@ -3,7 +3,7 @@ name: Docker Build and Push
 env:
   IMAGE_NAME: ghrc.io/thakurnishu/portfolio
 on:
-  pull_request:
+  push:
     branches: [ "main" ]
     paths:
       - 'data.yaml'
